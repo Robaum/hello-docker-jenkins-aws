@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='dockerhub' version='1.0'><l:dependency name='dockerhub' groupId='org.jenkins-ci.plugins' artifactId='dockerhub' version='1.0' url='https://trello.com/b/unRZLtCH/dockerhub-plugin'><l:description/><l:license name='MIT' url=''/></l:dependency></l:dependencies>

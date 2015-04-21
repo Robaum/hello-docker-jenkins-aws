@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.nirima.jenkins.plugins.docker.DockerJobProperty plugin="docker-plugin@0.8">
+      <tagOnCompletion>false</tagOnCompletion>
+      <additionalTag></additionalTag>
+      <pushOnSuccess>false</pushOnSuccess>
+      <cleanImages>false</cleanImages>
+    </com.nirima.jenkins.plugins.docker.DockerJobProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>Local</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>sudo docker build -t robaum/hello-node:v$BUILD_NUMBER /vagrant/app/
+sudo docker run --rm -w /app robaum/hello-node:v$BUILD_NUMBER ./node_modules/mocha/bin/mocha ./test/test.js
+sudo docker push robaum/hello-node:v$BUILD_NUMBER</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>sudo ansible-playbook -i &quot;54.164.139.173,&quot; --private-key ~/.ssh/Ansible.pem --extra-vars &quot;build=v$BUILD_NUMBER&quot; /vagrant/ansible/ec2.yml</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

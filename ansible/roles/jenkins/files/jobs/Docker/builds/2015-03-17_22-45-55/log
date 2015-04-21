@@ -1,0 +1,131 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+ln 2015-03-17_22-45-55 /var/jenkins_home/jobs/Docker/builds/9 failed
+java.nio.file.FileSystemException: /var/jenkins_home/jobs/Docker/builds/9: Protocol error
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:91)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.createSymbolicLink(UnixFileSystemProvider.java:456)
+	at java.nio.file.Files.createSymbolicLink(Files.java:996)
+	at sun.reflect.GeneratedMethodAccessor279.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at hudson.Util.createSymlinkJava7(Util.java:1196)
+	at hudson.Util.createSymlink(Util.java:1112)
+	at hudson.model.Run.updateSymlinks(Run.java:1831)
+	at hudson.model.Run.execute(Run.java:1743)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:89)
+	at hudson.model.Executor.run(Executor.java:240)
+ln builds/lastSuccessfulBuild /var/jenkins_home/jobs/Docker/lastSuccessful failed
+java.nio.file.FileSystemException: /var/jenkins_home/jobs/Docker/lastSuccessful: Protocol error
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:91)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.createSymbolicLink(UnixFileSystemProvider.java:456)
+	at java.nio.file.Files.createSymbolicLink(Files.java:996)
+	at sun.reflect.GeneratedMethodAccessor279.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at hudson.Util.createSymlinkJava7(Util.java:1196)
+	at hudson.Util.createSymlink(Util.java:1112)
+	at hudson.model.Run.createSymlink(Run.java:1851)
+	at hudson.model.Run.updateSymlinks(Run.java:1832)
+	at hudson.model.Run.execute(Run.java:1743)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:89)
+	at hudson.model.Executor.run(Executor.java:240)
+ln builds/lastStableBuild /var/jenkins_home/jobs/Docker/lastStable failed
+java.nio.file.FileSystemException: /var/jenkins_home/jobs/Docker/lastStable: Protocol error
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:91)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.createSymbolicLink(UnixFileSystemProvider.java:456)
+	at java.nio.file.Files.createSymbolicLink(Files.java:996)
+	at sun.reflect.GeneratedMethodAccessor279.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at hudson.Util.createSymlinkJava7(Util.java:1196)
+	at hudson.Util.createSymlink(Util.java:1112)
+	at hudson.model.Run.createSymlink(Run.java:1851)
+	at hudson.model.Run.updateSymlinks(Run.java:1833)
+	at hudson.model.Run.execute(Run.java:1743)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:89)
+	at hudson.model.Executor.run(Executor.java:240)
+Building remotely on [8mha:AAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZ+/eT83ILSktQifZ/85MQcAKyxGIjEAAAA[0mLocal (docker) in workspace /data/jenkins/slaves/local/workspace/Docker
+[Docker] $ /bin/sh -xe /tmp/hudson5158920181240859043.sh
++ sudo docker build -t robaum/hello-node:v9 /vagrant/app/
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 1.114 MBSending build context to Docker daemon 1.671 MBSending build context to Docker daemon 2.228 MBSending build context to Docker daemon 2.785 MBSending build context to Docker daemon 3.342 MBSending build context to Docker daemon 3.899 MBSending build context to Docker daemon 4.456 MBSending build context to Docker daemon 4.682 MB
+Sending build context to Docker daemon 
+Step 0 : FROM node:0.10
+ ---> 164719f9d7ea
+Step 1 : MAINTAINER Roberto Amador
+ ---> Using cache
+ ---> 76bb18805f52
+Step 2 : RUN mkdir -p /app
+ ---> Using cache
+ ---> 5144aa221bf1
+Step 3 : WORKDIR /app
+ ---> Using cache
+ ---> d7faf66a1af6
+Step 4 : ADD . /app
+ ---> f448f62fee95
+Removing intermediate container 5f10642dd34a
+Step 5 : EXPOSE 3000
+ ---> Running in f921dbe4b8cb
+ ---> aea5371b8503
+Removing intermediate container f921dbe4b8cb
+Step 6 : CMD node app.js
+ ---> Running in 011c0ce031f7
+ ---> cef590c7c699
+Removing intermediate container 011c0ce031f7
+Successfully built cef590c7c699
++ sudo docker run --rm -w /app robaum/hello-node:v9 ./node_modules/mocha/bin/mocha ./test/test.js
+
+  [33m․[0m
+
+[92m [0m[32m 1 passing[0m[90m (50ms)[0m
+
++ sudo docker push robaum/hello-node:v9
+The push refers to a repository [robaum/hello-node] (len: 1)
+Sending image list
+Pushing repository robaum/hello-node (1 tags)
+511136ea3c5a: Pushing
+511136ea3c5a: Image already pushed, skipping
+3b3a4796eef1: Pushing
+3b3a4796eef1: Image already pushed, skipping
+50ec2d202fe8: Pushing
+50ec2d202fe8: Image already pushed, skipping
+1073b544a1cb: Pushing
+1073b544a1cb: Image already pushed, skipping
+6a7520a7fd8c: Pushing
+6a7520a7fd8c: Image already pushed, skipping
+97218cc5aae0: Pushing
+97218cc5aae0: Image already pushed, skipping
+998340f14a46: Pushing
+998340f14a46: Image already pushed, skipping
+2a691fec3008: Pushing
+2a691fec3008: Image already pushed, skipping
+6a0227f1e88d: Pushing
+6a0227f1e88d: Image already pushed, skipping
+e7b3b271536d: Pushing
+e7b3b271536d: Image already pushed, skipping
+164719f9d7ea: Pushing
+164719f9d7ea: Image already pushed, skipping
+76bb18805f52: Pushing
+76bb18805f52: Image already pushed, skipping
+5144aa221bf1: Pushing
+5144aa221bf1: Image already pushed, skipping
+d7faf66a1af6: Pushing
+d7faf66a1af6: Image already pushed, skipping
+f448f62fee95: Pushing
+f448f62fee95: Buffering to disk
+f448f62fee95: Image successfully pushed
+aea5371b8503: Pushing
+aea5371b8503: Buffering to disk
+aea5371b8503: Image successfully pushed
+cef590c7c699: Pushing
+cef590c7c699: Buffering to disk
+cef590c7c699: Image successfully pushed
+Pushing tag for rev [cef590c7c699] on {https://cdn-registry-1.docker.io/v1/repositories/robaum/hello-node/tags/v9}
+Finished: SUCCESS

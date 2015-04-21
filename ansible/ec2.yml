@@ -1,0 +1,14 @@
+---
+- name: Start Docker Container
+  hosts: all
+  user: ubuntu
+  sudo: true
+  tasks:
+    - name: Stop all Containers
+      raw: docker stop $(sudo docker ps -a -q)
+
+    - name: Remove all Containers
+      raw: docker rm $(sudo docker ps -a -q)
+
+    - name: start hello-node
+      docker: image=robaum/hello-node:{{build}} ports=3000:3000 state=running

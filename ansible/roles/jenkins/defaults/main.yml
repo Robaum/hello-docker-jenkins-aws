@@ -1,0 +1,5 @@
+jenkins_directory: /data/jenkins
+
+directories:
+  - '{{ jenkins_directory }}'
+  - '{{ jenkins_directory }}/slaves/local'

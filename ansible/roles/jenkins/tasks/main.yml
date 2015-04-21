@@ -1,0 +1,17 @@
+---
+- name: Directories are present
+  file:
+    path="{{ item }}"
+    state=directory
+    mode=777
+  with_items: directories
+  tags: [jenkins]
+
+- name: Container is running
+  docker:
+    name=jenkins
+    image=jenkins:latest
+    ports=8080:8080
+    volumes=/vagrant/ansible/roles/jenkins/files:/var/jenkins_home
+    state=running
+  tags: [jenkins]

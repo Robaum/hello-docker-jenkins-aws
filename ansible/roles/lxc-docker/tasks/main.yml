@@ -1,0 +1,54 @@
+# Installs lxc-docker on Ubuntu 14.04. hosts
+---
+- name: ensure `apt-transport-https` installed
+  tags: lxc-docker
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: add the Docker repository key to keychain
+  tags: lxc-docker
+  apt_key:
+    id: 36A1D7869245C8950F966E92D8576A8BA88D21E9
+    keyserver: hkp://keyserver.ubuntu.com:80
+    state: present
+    validate_certs: yes
+
+- name: add the Docker repository to apt sources list
+  tags: lxc-docker
+  apt_repository:
+    repo: 'deb https://get.docker.com/ubuntu docker main'
+    state: present
+    update_cache: yes
+
+- name: install lxc-docker by apt
+  tags: lxc-docker
+  apt:
+    name: lxc-docker
+    state: present
+
+- name: Install pip python package
+  tags: lxc-docker
+  apt:
+    pkg: "{{ item }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 600
+  with_items:
+    - python-dev
+    - python-pip
+
+- name: Install Docker-py
+  tags: lxc-docker
+  pip:
+    name: docker-py
+
+# - name: Add User to Docker group
+#   tags: lxc-docker
+#   raw: sudo gpasswd -a ${USER} docker
+
+- name: Reload lxc-docker
+  tags: lxc-docker
+  service:
+    name: docker
+    state: reloaded
