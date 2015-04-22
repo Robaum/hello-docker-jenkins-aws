@@ -17,9 +17,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Sync'd folder
   config.vm.synced_folder ".", "/vagrant"
 
-  # Private IP
-  config.vm.network "private_network", ip: "192.168.50.91"
-
   # Install Ansible and use as provision
   config.vm.provision "shell" do |sh|
     sh.path = "ansible/ansible.sh"
