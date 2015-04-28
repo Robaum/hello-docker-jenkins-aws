@@ -1,0 +1,10 @@
+---
+- name: Start Docker Container
+  hosts: all
+  user: ubuntu
+  sudo: true
+  roles:
+    - lxc-docker
+  tasks:
+    - name: start hello-node
+      docker: image={{ouruser}}/hello-node:{{build}} ports=3000:3000 state=running
