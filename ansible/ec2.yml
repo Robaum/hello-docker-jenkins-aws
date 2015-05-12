@@ -11,4 +11,4 @@
       raw: docker rm $(sudo docker ps -a -q)
 
     - name: start hello-node
-      docker: image=robaum/hello-node:{{build}} ports=3000:3000 state=running
+      docker: image={{ouruser}}/hello-node:{{build}} ports=3000:3000 state=running
