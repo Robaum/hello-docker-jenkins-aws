@@ -40,19 +40,19 @@
 - name: Upgrade pip
   shell: easy_install --upgrade pip
 
-- name: Upgrade latest pip, setuptools, and docker-py with pip
+- name: Upgrade latest pip, setuptools with pip
   pip:
     name: "{{ item }}"
     state: latest
   with_items:
     - pip
     - setuptools
-    - docker-py
 
 - name: Install Docker-py
   tags: lxc-docker
   pip:
     name: docker-py
+    version: 1.2.2
 
 # - name: Add User to Docker group
 #   tags: lxc-docker
